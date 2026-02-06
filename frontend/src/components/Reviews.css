@@ -1,0 +1,40 @@
+.reviews-container {
+  margin-top: 20px;
+}
+
+.reviews-list {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.review-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.review-item.positive {
+  border-left: 5px solid #28a745;
+}
+
+.review-item.neutral {
+  border-left: 5px solid #ffc107;
+}
+
+.review-item.negative {
+  border-left: 5px solid #dc3545;
+}
+
+.review-text {
+  margin: 0 0 5px 0;
+}
+
+.review-sentiment {
+  font-style: italic;
+  color: #555;
+  font-size: 0.9em;
+  margin: 0;
+}

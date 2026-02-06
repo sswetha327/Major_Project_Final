@@ -1,0 +1,25 @@
+.sentiment-counts {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.count {
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  width: 150px;
+  text-align: center;
+}
+
+.positive {
+  background-color: #28a745;
+}
+
+.neutral {
+  background-color: #ffc107;
+}
+
+.negative {
+  background-color: #dc3545;
+}

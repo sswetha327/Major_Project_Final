@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Connection Test</h1>
+    <button onclick="testAPI()">Test API</button>
+    <div id="result"></div>
+
+    <script>
+        async function testAPI() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const response = await fetch('http://127.0.0.1:5001/analyze-product', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url: 'https://example.com/test' })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    <h3>✅ Success!</h3>
+                    <p><strong>Product Name:</strong> ${data.product_name}</p>
+                    <p><strong>Message:</strong> ${data.message}</p>
+                    <p><strong>Reviews:</strong> ${data.reviews.length}</p>
+                    <p><strong>Sentiment:</strong> ${JSON.stringify(data.summary)}</p>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h3>❌ Error:</h3>
+                    <p>${error.message}</p>
+                    <p>Check browser console for more details</p>
+                `;
+                console.error('API Test Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.charts-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.chart {
+  width: 400px;
+  height: 400px;
+}
