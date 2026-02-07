@@ -6,3 +6,5 @@ beautifulsoup4
 vaderSentiment
 pymongo
 python-dotenv
+gunicorn
+
